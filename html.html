@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Jquery Interactions & Widgets</title>
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+	$(document).ready(function(){
+
+		 $( "#slider" ).slider();
+
+	    $( "#accordion" ).accordion();
+
+        $( "#datepicker" ).datepicker();
+
+		$("#resizable").resizable();
+
+        $("#draggable").draggable();
+
+        $("#droppable").droppable({
+        	drop: function(event, ui){
+              $( this )
+               .addClass( "ui-state-highlight" )
+               .find( "p" )
+                .html( "Dropped!" );
+      }
+  });
+    });
+</script>
+</head>
+<body>
+	<div id="draggable" style="width: 150px;height: 150px;text-align: center;border: 1px solid #6231DE;background: #14DB34">
+		<p>Drag me around</p>
+	</div>
+
+	<div id="droppable" style="width: 200px;height: 200px;text-align: center;border: 1px solid #6231DE;background: #EDE220">
+		<p>Drop here</p>
+	</div>
+
+	<div id="resizable" style="width: 200px;height: 200px;text-align: center;border: 1px solid #6231DE;background: #24EDB6">
+        <h3 class="ui-widget-header">Resizable</h3>
+    </div>
+
+    <p>Date: <input type="text" id="datepicker"></p>
+
+    <div id="accordion">
+  <h3>Section 1</h3>
+  <div>
+    <p>
+    Mauris mauris ante, blandit et, ultrices a, suscipit eget, quame.
+    </p>
+  </div>
+  <h3>Section 2</h3>
+  <div>
+    <p>
+    Sed non urna. Donec et ante. Phasellus eu ligula. 
+    </p>
+  </div>
+  <h3>Section 3</h3>
+  <div>
+    <p>
+    Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
+    </p>
+  </div>
+</div>
+
+  <br>
+  <div id="slider"></div>
+ 
+</body>
+</html>
